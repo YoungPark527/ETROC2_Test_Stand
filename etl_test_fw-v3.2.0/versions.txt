@@ -1,0 +1,19 @@
+## etl_test_fw Version Table
+| **File set**              | **Commit SHA** | **Version** |
+| ---                       | ---            | ---         |
+| Global                    | cdb5e5c        | 3.2.0       |
+| Constraints               | 6a24cfa        | 3.0.7       |
+| IPbus XML                 | 9facff0        | 3.1.0       |
+| Top Directory             | 45d5c11        | 3.1.0       |
+| Hog                       | 34cf4c5        | 6.48.10     |
+| **Lib:** etroc            | e0aa28b        | 3.0.7       |
+| **Lib:** etl_test_fw      | cdb5e5c        | 3.2.0       |
+| **Lib:** ctrl_lib         | 9facff0        | 3.1.0       |
+| **Lib:** ipbus            | dc0feba        | 3.2.0       |
+| **Lib:** lpgbt_emul       | b6af8b8        | 3.0.5       |
+| **Lib:** gbt_sc           | b6af8b8        | 3.0.5       |
+| **Lib:** verilog_ethernet | 1c61f09        | 2.1.0       |
+| **Lib:** lpgbt_fpga       | b6af8b8        | 3.0.5       |
+
+
+

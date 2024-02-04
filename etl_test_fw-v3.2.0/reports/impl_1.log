@@ -1,0 +1,984 @@
+
+*** Running vivado
+    with args -log etl_test_fw.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source etl_test_fw.tcl -notrace
+
+
+****** Vivado v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source etl_test_fw.tcl -notrace
+Command: link_design -top etl_test_fw -part xcku040-ffva1156-2-e
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xcku040-ffva1156-2-e
+INFO: [Project 1-454] Reading design checkpoint '/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/system_clocks/system_clocks.dcp' for cell 'system_clocks_inst'
+INFO: [Project 1-454] Reading design checkpoint '/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/xlx_ku_mgt_ip_10g24.dcp' for cell 'datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i'
+INFO: [Project 1-454] Reading design checkpoint '/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/gig_eth_pcs_pma_gmii_to_sgmii_bridge/gig_eth_pcs_pma_gmii_to_sgmii_bridge.dcp' for cell 'eth.eth_infra_inst/eth/sgmii'
+INFO: [Project 1-454] Reading design checkpoint '/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_lpgbt/ila_lpgbt.dcp' for cell 'rbgen[0].readout_board_inst/debug.ila_lpgbt_inst'
+INFO: [Project 1-454] Reading design checkpoint '/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_sca.dcp' for cell 'rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst'
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2607.492 ; gain = 10.000 ; free physical = 14730 ; free virtual = 55836
+INFO: [Netlist 29-17] Analyzing 12504 Unisim elements for replacement
+CRITICAL WARNING: [Netlist 29-358] Reg 'rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/master_gbtsc_top_inst/ic_inst/tx_inst/cmd_len_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/gbt-sc/GBT-SC/IC/ic_tx.vhd:135]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/master_gbtsc_top_inst/ic_inst/tx_inst/wr_ptr_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/gbt-sc/GBT-SC/IC/ic_tx.vhd:134]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/master_gbtsc_top_inst/ic_inst/tx_inst/cmd_len_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/gbt-sc/GBT-SC/IC/ic_tx.vhd:135]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/master_gbtsc_top_inst/ic_inst/tx_inst/wr_ptr_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/gbt-sc/GBT-SC/IC/ic_tx.vhd:134]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/master_gbtsc_top_inst/ic_inst/tx_inst/cmd_len_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/gbt-sc/GBT-SC/IC/ic_tx.vhd:135]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/master_gbtsc_top_inst/ic_inst/tx_inst/wr_ptr_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/gbt-sc/GBT-SC/IC/ic_tx.vhd:134]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/master_gbtsc_top_inst/ic_inst/tx_inst/cmd_len_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/gbt-sc/GBT-SC/IC/ic_tx.vhd:135]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/master_gbtsc_top_inst/ic_inst/tx_inst/wr_ptr_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/gbt-sc/GBT-SC/IC/ic_tx.vhd:134]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/master_gbtsc_top_inst/ic_inst/tx_inst/cmd_len_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/gbt-sc/GBT-SC/IC/ic_tx.vhd:135]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+CRITICAL WARNING: [Netlist 29-358] Reg 'rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/master_gbtsc_top_inst/ic_inst/tx_inst/wr_ptr_reg[0]' of type 'FDCP' cannot be timed accurately. Hardware behavior may be unpredictable. Use check_timing command for more information. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/gbt-sc/GBT-SC/IC/ic_tx.vhd:134]
+Resolution: Recode your design, so that you do not depend on both asynchronous set and reset for your desired functionality.
+Convert at least one of them to synchronous signal, or get rid of at least one of those.
+Often, the use of "initial" value will help you get rid of one of the asynchronous set/reset signals.
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2021.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Chipscope 16-324] Core: rbgen[0].readout_board_inst/debug.ila_lpgbt_inst UUID: df90b95b-cf3d-5b3c-a23b-573d2b725b4a 
+INFO: [Chipscope 16-324] Core: rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst UUID: 9262a958-03b0-5328-b847-6a525197ef04 
+INFO: [Chipscope 16-324] Core: rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst UUID: 7a3c898a-55b2-5c91-9c64-aa709d8927cf 
+INFO: [Chipscope 16-324] Core: rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst UUID: 62e21a30-5d12-5335-88d6-afd9c4ac7dbd 
+INFO: [Chipscope 16-324] Core: rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst UUID: 8b611731-b7aa-5d5c-a876-175968b25bfe 
+INFO: [Chipscope 16-324] Core: rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst UUID: 00324e14-28fa-5803-aac7-d0a79ed805ef 
+WARNING: [Project 1-536] The new scoped_to_ref value 'system_ibert' does not exist in the netlist
+WARNING: [Project 1-536] The new scoped_to_ref value 'system_ibert' does not exist in the netlist
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'ila_sc'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sc/ila_v6_2/constraints/ila_impl.xdc will not be read for any cell of this module.
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/system_clocks/system_clocks.xdc] for cell 'system_clocks_inst/inst'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/system_clocks/system_clocks.xdc] for cell 'system_clocks_inst/inst'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/system_clocks/system_clocks_board.xdc] for cell 'system_clocks_inst/inst'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/system_clocks/system_clocks_board.xdc] for cell 'system_clocks_inst/inst'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/gig_eth_pcs_pma_gmii_to_sgmii_bridge/synth/gig_eth_pcs_pma_gmii_to_sgmii_bridge.xdc] for cell 'eth.eth_infra_inst/eth/sgmii/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/gig_eth_pcs_pma_gmii_to_sgmii_bridge/synth/gig_eth_pcs_pma_gmii_to_sgmii_bridge.xdc] for cell 'eth.eth_infra_inst/eth/sgmii/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/gig_eth_pcs_pma_gmii_to_sgmii_bridge/synth/gig_eth_pcs_pma_gmii_to_sgmii_bridge_clocks.xdc] for cell 'eth.eth_infra_inst/eth/sgmii/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/gig_eth_pcs_pma_gmii_to_sgmii_bridge/synth/gig_eth_pcs_pma_gmii_to_sgmii_bridge_clocks.xdc] for cell 'eth.eth_infra_inst/eth/sgmii/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/gig_eth_pcs_pma_gmii_to_sgmii_bridge/gig_eth_pcs_pma_gmii_to_sgmii_bridge_board.xdc] for cell 'eth.eth_infra_inst/eth/sgmii/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/gig_eth_pcs_pma_gmii_to_sgmii_bridge/gig_eth_pcs_pma_gmii_to_sgmii_bridge_board.xdc] for cell 'eth.eth_infra_inst/eth/sgmii/U0'
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'ila_ipb'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_ipb/ila_v6_2/constraints/ila.xdc will not be read for any cell of this module.
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'ila_ipb'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_ipb/ila_v6_2/constraints/ila_impl.xdc will not be read for any cell of this module.
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sca/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0'
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'ila_sc'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_sc/ila_v6_2/constraints/ila.xdc will not be read for any cell of this module.
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'system_ibert'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/system_ibert/synth/sw_mcs_all.xdc will not be read for any cell of this module.
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'ila_pat_check'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_pat_check/ila_v6_2/constraints/ila.xdc will not be read for any cell of this module.
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'ila_pat_check'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_pat_check/ila_v6_2/constraints/ila_impl.xdc will not be read for any cell of this module.
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_lpgbt/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_lpgbt/ila_v6_2/constraints/ila.xdc] for cell 'rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_lpgbt/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/ila_lpgbt/ila_v6_2/constraints/ila_impl.xdc] for cell 'rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[1].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+CRITICAL WARNING: [Vivado 12-2285] Cannot set LOC property of instance 'datagen[1].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST'... datagen[1].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST Instance datagen[1].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST can not be placed in GTHE3_CHANNEL of site GTHE3_CHANNEL_X0Y10 because the bel is occupied by datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST. This could be caused by bel constraint conflict [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc:57]
+Resolution: When using BEL constraints, ensure the BEL constraints are defined before the LOC constraints to avoid conflicts at a given site.
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[1].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[2].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+CRITICAL WARNING: [Vivado 12-2285] Cannot set LOC property of instance 'datagen[2].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST'... datagen[2].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST Instance datagen[2].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST can not be placed in GTHE3_CHANNEL of site GTHE3_CHANNEL_X0Y10 because the bel is occupied by datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST. This could be caused by bel constraint conflict [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc:57]
+Resolution: When using BEL constraints, ensure the BEL constraints are defined before the LOC constraints to avoid conflicts at a given site.
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[2].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[3].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+CRITICAL WARNING: [Vivado 12-2285] Cannot set LOC property of instance 'datagen[3].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST'... datagen[3].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST Instance datagen[3].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST can not be placed in GTHE3_CHANNEL of site GTHE3_CHANNEL_X0Y10 because the bel is occupied by datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST. This could be caused by bel constraint conflict [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc:57]
+Resolution: When using BEL constraints, ensure the BEL constraints are defined before the LOC constraints to avoid conflicts at a given site.
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[3].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[4].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+CRITICAL WARNING: [Vivado 12-2285] Cannot set LOC property of instance 'datagen[4].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST'... datagen[4].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST Instance datagen[4].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST can not be placed in GTHE3_CHANNEL of site GTHE3_CHANNEL_X0Y10 because the bel is occupied by datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST. This could be caused by bel constraint conflict [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc:57]
+Resolution: When using BEL constraints, ensure the BEL constraints are defined before the LOC constraints to avoid conflicts at a given site.
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[4].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[5].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+CRITICAL WARNING: [Vivado 12-2285] Cannot set LOC property of instance 'datagen[5].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST'... datagen[5].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST Instance datagen[5].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST can not be placed in GTHE3_CHANNEL of site GTHE3_CHANNEL_X0Y10 because the bel is occupied by datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST. This could be caused by bel constraint conflict [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc:57]
+Resolution: When using BEL constraints, ensure the BEL constraints are defined before the LOC constraints to avoid conflicts at a given site.
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[5].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[6].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+CRITICAL WARNING: [Vivado 12-2285] Cannot set LOC property of instance 'datagen[6].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST'... datagen[6].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST Instance datagen[6].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST can not be placed in GTHE3_CHANNEL of site GTHE3_CHANNEL_X0Y10 because the bel is occupied by datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST. This could be caused by bel constraint conflict [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc:57]
+Resolution: When using BEL constraints, ensure the BEL constraints are defined before the LOC constraints to avoid conflicts at a given site.
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[6].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[7].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+CRITICAL WARNING: [Vivado 12-2285] Cannot set LOC property of instance 'datagen[7].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST'... datagen[7].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST Instance datagen[7].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST can not be placed in GTHE3_CHANNEL of site GTHE3_CHANNEL_X0Y10 because the bel is occupied by datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST. This could be caused by bel constraint conflict [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc:57]
+Resolution: When using BEL constraints, ensure the BEL constraints are defined before the LOC constraints to avoid conflicts at a given site.
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[7].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[8].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+CRITICAL WARNING: [Vivado 12-2285] Cannot set LOC property of instance 'datagen[8].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST'... datagen[8].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST Instance datagen[8].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST can not be placed in GTHE3_CHANNEL of site GTHE3_CHANNEL_X0Y10 because the bel is occupied by datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST. This could be caused by bel constraint conflict [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc:57]
+Resolution: When using BEL constraints, ensure the BEL constraints are defined before the LOC constraints to avoid conflicts at a given site.
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[8].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[9].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+CRITICAL WARNING: [Vivado 12-2285] Cannot set LOC property of instance 'datagen[9].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST'... datagen[9].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST Instance datagen[9].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST can not be placed in GTHE3_CHANNEL of site GTHE3_CHANNEL_X0Y10 because the bel is occupied by datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST. This could be caused by bel constraint conflict [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc:57]
+Resolution: When using BEL constraints, ensure the BEL constraints are defined before the LOC constraints to avoid conflicts at a given site.
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xlx_ku_mgt_ip_10g24/synth/xlx_ku_mgt_ip_10g24.xdc] for cell 'datagen[9].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst'
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'xdma_0'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xdma_0/source/xdma_0_pcie3_us_ip.xdc will not be read for any cell of this module.
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'xdma_0'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xdma_0/xdma_0_board.xdc will not be read for any cell of this module.
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'xdma_0_pcie3_ip'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xdma_0/ip_0/source/xdma_0_pcie3_ip-PCIE_X0Y0.xdc will not be read for any cell of this module.
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'xdma_0_pcie3_ip_gt'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/xdma_0/ip_0/ip_0/synth/xdma_0_pcie3_ip_gt.xdc will not be read for any cell of this module.
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'system_ibert'. The XDC file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/system_ibert/synth/system_ibert.xdc will not be read for any cell of this module.
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc]
+WARNING: [Vivado 12-584] No ports matched 'pcie_sys_clk_p'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pcie_sys_clk_p'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc:12]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports pcie_sys_clk_p]'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc:12]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'pcie_rx_p[0]'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'pcie_tx_p[0]'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Constraints 18-1056] Clock 'ethclk' completely overrides clock 'sgmii_clk_p'.
+New: create_clock -period 1.590 -name ethclk [get_ports sgmii_clk_p], [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc:116]
+Previous: create_clock -period 1.600 [get_ports sgmii_clk_p], [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/gig_eth_pcs_pma_gmii_to_sgmii_bridge/synth/gig_eth_pcs_pma_gmii_to_sgmii_bridge_clocks.xdc:2]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/pins.xdc]
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/locs.xdc]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'BITSLICE_RX_TX_X1Y80' specified for 'objects'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/locs.xdc:4]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'BITSLICE_RX_TX_X1Y81' specified for 'objects'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/locs.xdc:5]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'BITSLICE_RX_TX_X1Y75' specified for 'objects'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/locs.xdc:8]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'SLICE_X44Y89' specified for 'objects'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/locs.xdc:9]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'SLICE_X43Y89' specified for 'objects'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/locs.xdc:10]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'SLICE_X44Y89' specified for 'objects'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/locs.xdc:11]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'SLICE_X43Y89' specified for 'objects'. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/locs.xdc:12]
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/locs.xdc]
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/timing.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/timing.xdc:5]
+INFO: [Timing 38-2] Deriving generated clocks [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/timing.xdc:5]
+get_clocks: Time (s): cpu = 00:00:29 ; elapsed = 00:00:07 . Memory (MB): peak = 3438.574 ; gain = 535.617 ; free physical = 13368 ; free virtual = 54475
+CRITICAL WARNING: [Designutils 20-1307] Command '-from' is not supported in the xdc constraint file. [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/timing.xdc:59]
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/timing.xdc]
+Sourcing Tcl File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/lpgbt_multicycle.tcl]
+Setting LPGBT Uplink Pipeline Multicycle Path
+Setting LPGBT Uplink Descrambler Multicycle Path
+Setting LPGBT Downlink Scrambler Multicycle Path
+Finished Sourcing Tcl File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/xdc/lpgbt_multicycle.tcl]
+WARNING: [Project 1-536] The new scoped_to_ref value 'system_ibert' does not exist in the netlist
+WARNING: [Project 1-536] The new scoped_to_ref value 'system_ibert' does not exist in the netlist
+Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/system_clocks/system_clocks_late.xdc] for cell 'system_clocks_inst/inst'
+Finished Parsing XDC File [/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/ip/system_clocks/system_clocks_late.xdc] for cell 'system_clocks_inst/inst'
+INFO: [Project 1-1714] 530 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT datagen[0].xlx_ku_mgt_10g24_inst/rxWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT datagen[0].xlx_ku_mgt_10g24_inst/txWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[1].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT datagen[1].xlx_ku_mgt_10g24_inst/rxWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[1].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT datagen[1].xlx_ku_mgt_10g24_inst/txWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[2].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT datagen[2].xlx_ku_mgt_10g24_inst/rxWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[2].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT datagen[2].xlx_ku_mgt_10g24_inst/txWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[3].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT datagen[3].xlx_ku_mgt_10g24_inst/rxWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[3].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT datagen[3].xlx_ku_mgt_10g24_inst/txWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[4].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT datagen[4].xlx_ku_mgt_10g24_inst/rxWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[4].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT datagen[4].xlx_ku_mgt_10g24_inst/txWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[5].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT datagen[5].xlx_ku_mgt_10g24_inst/rxWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[5].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT datagen[5].xlx_ku_mgt_10g24_inst/txWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[6].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT datagen[6].xlx_ku_mgt_10g24_inst/rxWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[6].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT datagen[6].xlx_ku_mgt_10g24_inst/txWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[7].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT datagen[7].xlx_ku_mgt_10g24_inst/rxWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[7].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT datagen[7].xlx_ku_mgt_10g24_inst/txWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[8].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT datagen[8].xlx_ku_mgt_10g24_inst/rxWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[8].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT datagen[8].xlx_ku_mgt_10g24_inst/txWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[9].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT datagen[9].xlx_ku_mgt_10g24_inst/rxWordClkBuf_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC datagen[9].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT datagen[9].xlx_ku_mgt_10g24_inst/txWordClkBuf_inst
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3988.246 ; gain = 0.000 ; free physical = 13805 ; free virtual = 54912
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 995 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 908 instances
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 2 instances
+  FDCP => FDCP (FDCE, FDPE, LDCE, LUT3, VCC): 10 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 5 instances
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 2 instances
+  IBUFDS_DIFF_OUT => IBUFDS_DIFF_OUT (DIFFINBUF, IBUFCTRL(x2)): 1 instance 
+  IBUFGDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+  IOBUF => IOBUF (IBUFCTRL, INBUF, OBUFT): 1 instance 
+  OBUFDS => OBUFDS: 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 24 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 40 instances
+
+41 Infos, 8 Warnings, 45 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:01:22 ; elapsed = 00:00:57 . Memory (MB): peak = 3988.246 ; gain = 1530.551 ; free physical = 13800 ; free virtual = 54907
+source /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Hog/Tcl/integrated/pre-implementation.tcl
+CRITICAL WARNING: [Hog:Msg-0] Multithreading enabled. Bitfile will not be deterministic. Number of threads: 12
+INFO: [Hog:ResetRepoFiles-0] Found ./Projects/hog_reset_files, opening it...
+INFO: [Hog:ResetRepoFiles-0] Found the following files/wild cards to restore if modified: *.bd ip/*/*...
+INFO: [Hog:ResetRepoFiles-0] No modified *.bd files found.
+INFO: [Hog:ResetRepoFiles-0] No modified ip/*/* files found.
+INFO: [Hog:Msg-0] All done
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku040'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku040'
+INFO: [Common 17-1540] The version limit for your license is '2022.03' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 12 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.89 . Memory (MB): peak = 4092.297 ; gain = 96.047 ; free physical = 13771 ; free virtual = 54878
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 240757084
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:05 . Memory (MB): peak = 4092.297 ; gain = 0.000 ; free physical = 13310 ; free virtual = 54417
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+Netlist sorting complete. Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.11 . Memory (MB): peak = 4092.297 ; gain = 0.000 ; free physical = 12935 ; free virtual = 54074
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 20f21a2f6
+
+Time (s): cpu = 00:01:20 ; elapsed = 00:01:04 . Memory (MB): peak = 4092.297 ; gain = 0.000 ; free physical = 12932 ; free virtual = 54070
+
+Phase 2 Retarget
+INFO: [Opt 31-138] Pushed 188 inverter(s) to 15418 load pin(s).
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/debug.ila_lpgbt_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[8].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[0].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[1].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[2].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[3].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[2].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell rbgen[4].readout_board_inst/sc_gen.gbt_controller_wrapper_inst/sca_ila_gen.ila_sca_inst/U0/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[4].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM36.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 2 Retarget | Checksum: 22bcd48fa
+
+Time (s): cpu = 00:01:51 ; elapsed = 00:01:14 . Memory (MB): peak = 4092.297 ; gain = 0.000 ; free physical = 13372 ; free virtual = 54511
+INFO: [Opt 31-389] Phase Retarget created 399 cells and removed 881 cells
+INFO: [Opt 31-1021] In phase Retarget, 249 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 3 Constant propagation | Checksum: 21f4447a8
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:01:16 . Memory (MB): peak = 4092.297 ; gain = 0.000 ; free physical = 13364 ; free virtual = 54503
+INFO: [Opt 31-389] Phase Constant propagation created 6 cells and removed 131 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 96 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Sweep
+Phase 4 Sweep | Checksum: 199d0bc7a
+
+Time (s): cpu = 00:01:57 ; elapsed = 00:01:20 . Memory (MB): peak = 4092.297 ; gain = 0.000 ; free physical = 13346 ; free virtual = 54485
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 1661 cells
+INFO: [Opt 31-1021] In phase Sweep, 14369 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 5 BUFG optimization | Checksum: 1faf46da9
+
+Time (s): cpu = 00:02:00 ; elapsed = 00:01:23 . Memory (MB): peak = 4092.297 ; gain = 0.000 ; free physical = 13356 ; free virtual = 54495
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 1 cells.
+INFO: [Opt 31-1021] In phase BUFG optimization, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 6 Shift Register Optimization | Checksum: 1faf46da9
+
+Time (s): cpu = 00:02:00 ; elapsed = 00:01:24 . Memory (MB): peak = 4092.297 ; gain = 0.000 ; free physical = 13355 ; free virtual = 54494
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 7 Post Processing Netlist
+Phase 7 Post Processing Netlist | Checksum: 1fc384469
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:01:24 . Memory (MB): peak = 4092.297 ; gain = 0.000 ; free physical = 13355 ; free virtual = 54494
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 98 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |             399  |             881  |                                            249  |
+|  Constant propagation         |               6  |             131  |                                             96  |
+|  Sweep                        |               0  |            1661  |                                          14369  |
+|  BUFG optimization            |               0  |               1  |                                              1  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             98  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.50 ; elapsed = 00:00:00.50 . Memory (MB): peak = 4092.297 ; gain = 0.000 ; free physical = 13335 ; free virtual = 54474
+Ending Logic Optimization Task | Checksum: 20fbbe675
+
+Time (s): cpu = 00:02:05 ; elapsed = 00:01:28 . Memory (MB): peak = 4092.297 ; gain = 0.000 ; free physical = 13333 ; free virtual = 54472
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Power 33-23] Power model is not available for DNA_PORT_inst
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 355 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-201] Structural ODC has moved 8 WE to EN ports
+Number of BRAM Ports augmented: 75 newly gated: 130 Total Ports: 710
+Ending PowerOpt Patch Enables Task | Checksum: 1b7384979
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:08 . Memory (MB): peak = 6109.855 ; gain = 0.000 ; free physical = 11623 ; free virtual = 52846
+Ending Power Optimization Task | Checksum: 1b7384979
+
+Time (s): cpu = 00:03:12 ; elapsed = 00:00:55 . Memory (MB): peak = 6109.855 ; gain = 2017.559 ; free physical = 12009 ; free virtual = 53232
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Logic Optimization Task | Checksum: 15bf8e367
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:13 . Memory (MB): peak = 6109.855 ; gain = 0.000 ; free physical = 12055 ; free virtual = 53278
+Ending Final Cleanup Task | Checksum: 15bf8e367
+
+Time (s): cpu = 00:00:53 ; elapsed = 00:00:15 . Memory (MB): peak = 6109.855 ; gain = 0.000 ; free physical = 12049 ; free virtual = 53272
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 6109.855 ; gain = 0.000 ; free physical = 12046 ; free virtual = 53269
+Ending Netlist Obfuscation Task | Checksum: 15bf8e367
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 6109.855 ; gain = 0.000 ; free physical = 12044 ; free virtual = 53267
+INFO: [Common 17-83] Releasing license: Implementation
+117 Infos, 8 Warnings, 46 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:06:37 ; elapsed = 00:02:46 . Memory (MB): peak = 6109.855 ; gain = 2121.609 ; free physical = 12042 ; free virtual = 53265
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.03 . Memory (MB): peak = 6109.855 ; gain = 0.000 ; free physical = 11535 ; free virtual = 52763
+INFO: [Common 17-1381] The checkpoint '/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Projects/etl_test_fw/etl_test_fw.runs/impl_1/etl_test_fw_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:57 ; elapsed = 00:00:29 . Memory (MB): peak = 6109.855 ; gain = 0.000 ; free physical = 11304 ; free virtual = 52757
+INFO: [runtcl-4] Executing : report_drc -file etl_test_fw_drc_opted.rpt -pb etl_test_fw_drc_opted.pb -rpx etl_test_fw_drc_opted.rpx
+Command: report_drc -file etl_test_fw_drc_opted.rpt -pb etl_test_fw_drc_opted.pb -rpx etl_test_fw_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 12 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Projects/etl_test_fw/etl_test_fw.runs/impl_1/etl_test_fw_drc_opted.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:01:16 ; elapsed = 00:00:12 . Memory (MB): peak = 6121.902 ; gain = 12.047 ; free physical = 10912 ; free virtual = 52249
+INFO: [Chipscope 16-240] Debug cores have already been implemented
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku040'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku040'
+INFO: [Common 17-1540] The version limit for your license is '2022.03' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [DRC 23-27] Running DRC with 12 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 12 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 12 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.04 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 10888 ; free virtual = 52225
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 15667883b
+
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.11 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 10893 ; free virtual = 52230
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 10893 ; free virtual = 52230
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 9e868adf
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:11 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 11211 ; free virtual = 52551
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 9b835833
+
+Time (s): cpu = 00:01:42 ; elapsed = 00:00:43 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 10450 ; free virtual = 51790
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 9b835833
+
+Time (s): cpu = 00:01:43 ; elapsed = 00:00:43 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 10467 ; free virtual = 51807
+Phase 1 Placer Initialization | Checksum: 9b835833
+
+Time (s): cpu = 00:01:43 ; elapsed = 00:00:43 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 10432 ; free virtual = 51772
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 72a2ccdc
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:00:56 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 10106 ; free virtual = 51445
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: a8e7942a
+
+Time (s): cpu = 00:02:36 ; elapsed = 00:01:01 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 10105 ; free virtual = 51445
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: a8e7942a
+
+Time (s): cpu = 00:02:37 ; elapsed = 00:01:02 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 10105 ; free virtual = 51445
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 2 LUTNM shape to break, 3052 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 2, two critical 0, total 2, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 1174 nets or LUTs. Breaked 2 LUTs, combined 1172 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9854 ; free virtual = 51200
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            2  |           1172  |                  1174  |           0  |           1  |  00:00:02  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:01  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            2  |           1172  |                  1174  |           0  |           9  |  00:00:04  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.1 Physical Synthesis In Placer | Checksum: 27bd9f1b5
+
+Time (s): cpu = 00:07:10 ; elapsed = 00:02:58 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9823 ; free virtual = 51169
+Phase 2.4 Global Placement Core | Checksum: 1e1f2d2bc
+
+Time (s): cpu = 00:07:23 ; elapsed = 00:03:04 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9760 ; free virtual = 51106
+Phase 2 Global Placement | Checksum: 1e1f2d2bc
+
+Time (s): cpu = 00:07:23 ; elapsed = 00:03:04 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9894 ; free virtual = 51239
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1fd06b1c6
+
+Time (s): cpu = 00:07:38 ; elapsed = 00:03:08 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9929 ; free virtual = 51275
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 259f07682
+
+Time (s): cpu = 00:07:56 ; elapsed = 00:03:15 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9992 ; free virtual = 51338
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 22bc818b3
+
+Time (s): cpu = 00:08:42 ; elapsed = 00:03:39 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9549 ; free virtual = 50895
+
+Phase 3.3.2 DP Optimization
+Phase 3.3.2 DP Optimization | Checksum: 16c9a0088
+
+Time (s): cpu = 00:11:04 ; elapsed = 00:04:23 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9314 ; free virtual = 50661
+
+Phase 3.3.3 Flow Legalize Slice Clusters
+Phase 3.3.3 Flow Legalize Slice Clusters | Checksum: 24095a470
+
+Time (s): cpu = 00:11:06 ; elapsed = 00:04:24 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9529 ; free virtual = 50876
+
+Phase 3.3.4 Slice Area Swap
+Phase 3.3.4 Slice Area Swap | Checksum: 1ed43c0b2
+
+Time (s): cpu = 00:11:35 ; elapsed = 00:04:47 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9446 ; free virtual = 50792
+Phase 3.3 Small Shape DP | Checksum: 213f2aadd
+
+Time (s): cpu = 00:12:23 ; elapsed = 00:05:02 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9430 ; free virtual = 50776
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: 2029dc152
+
+Time (s): cpu = 00:12:32 ; elapsed = 00:05:12 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9440 ; free virtual = 50787
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: 18f611ce1
+
+Time (s): cpu = 00:12:35 ; elapsed = 00:05:15 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9236 ; free virtual = 50583
+Phase 3 Detail Placement | Checksum: 18f611ce1
+
+Time (s): cpu = 00:12:37 ; elapsed = 00:05:16 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9204 ; free virtual = 50550
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 137a65991
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 12 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.197 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: cad3e1d2
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:04 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9332 ; free virtual = 50678
+INFO: [Place 46-35] Processed net control_inst/reset_0, inserted BUFG to drive 4482 loads.
+INFO: [Place 46-45] Replicated bufg driver control_inst/reset_reg_replica
+INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 1, Replicated BUFG Driver: 1, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 19d3bfd57
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:07 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9343 ; free virtual = 50690
+Phase 4.1.1.1 BUFG Insertion | Checksum: 149bded6b
+
+Time (s): cpu = 00:15:52 ; elapsed = 00:05:55 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9350 ; free virtual = 50697
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.503. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 14aceb832
+
+Time (s): cpu = 00:16:14 ; elapsed = 00:06:15 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9244 ; free virtual = 50598
+
+Time (s): cpu = 00:16:14 ; elapsed = 00:06:15 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9245 ; free virtual = 50599
+Phase 4.1 Post Commit Optimization | Checksum: 14aceb832
+
+Time (s): cpu = 00:16:15 ; elapsed = 00:06:16 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9246 ; free virtual = 50600
+Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.09 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9269 ; free virtual = 50623
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 219b551bf
+
+Time (s): cpu = 00:16:20 ; elapsed = 00:06:21 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9280 ; free virtual = 50634
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                8x8|
+|___________|___________________|___________________|
+|      South|                1x1|                8x8|
+|___________|___________________|___________________|
+|       East|                1x1|                8x8|
+|___________|___________________|___________________|
+|       West|                1x1|                8x8|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 219b551bf
+
+Time (s): cpu = 00:16:21 ; elapsed = 00:06:22 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9281 ; free virtual = 50635
+Phase 4.3 Placer Reporting | Checksum: 219b551bf
+
+Time (s): cpu = 00:16:23 ; elapsed = 00:06:23 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9281 ; free virtual = 50635
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9281 ; free virtual = 50635
+
+Time (s): cpu = 00:16:23 ; elapsed = 00:06:23 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9281 ; free virtual = 50635
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 22e989f58
+
+Time (s): cpu = 00:16:24 ; elapsed = 00:06:24 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9274 ; free virtual = 50628
+Ending Placer Task | Checksum: 2019c52d6
+
+Time (s): cpu = 00:16:24 ; elapsed = 00:06:24 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9276 ; free virtual = 50630
+INFO: [Common 17-83] Releasing license: Implementation
+162 Infos, 8 Warnings, 46 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:16:36 ; elapsed = 00:06:30 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9650 ; free virtual = 51004
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:29 ; elapsed = 00:00:10 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9580 ; free virtual = 51285
+report_design_analysis: Time (s): cpu = 00:00:20 ; elapsed = 00:00:07 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9150 ; free virtual = 51235
+INFO: [Common 17-1381] The checkpoint '/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Projects/etl_test_fw/etl_test_fw.runs/impl_1/etl_test_fw_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:01:09 ; elapsed = 00:00:35 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9462 ; free virtual = 51270
+INFO: [runtcl-4] Executing : report_io -file etl_test_fw_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.20 ; elapsed = 00:00:00.36 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9429 ; free virtual = 51237
+INFO: [runtcl-4] Executing : report_utilization -file etl_test_fw_utilization_placed.rpt -pb etl_test_fw_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file etl_test_fw_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.79 ; elapsed = 00:00:00.99 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9401 ; free virtual = 51214
+INFO: [runtcl-4] Executing : report_utilization -file etl_test_fw_utilization_placed_1.rpt -pb etl_test_fw_utilization_placed_1.pb
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku040'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku040'
+INFO: [Common 17-1540] The version limit for your license is '2022.03' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+174 Infos, 8 Warnings, 46 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:01:59 ; elapsed = 00:00:19 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9730 ; free virtual = 51262
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:31 ; elapsed = 00:00:10 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 8893 ; free virtual = 50776
+INFO: [Common 17-1381] The checkpoint '/home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Projects/etl_test_fw/etl_test_fw.runs/impl_1/etl_test_fw_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:51 ; elapsed = 00:00:29 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 8792 ; free virtual = 50769
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku040'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku040'
+INFO: [Common 17-1540] The version limit for your license is '2022.03' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 12 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: 7069aaab ConstDB: 0 ShapeSum: c24c0e9e RouteDB: cee6998d
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 1e6f18b1f
+
+Time (s): cpu = 00:02:19 ; elapsed = 00:00:53 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9208 ; free virtual = 50910
+Post Restoration Checksum: NetGraph: cba09219 NumContArr: 4fa7f6de Constraints: 53d0083e Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 16f189135
+
+Time (s): cpu = 00:02:21 ; elapsed = 00:00:55 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9126 ; free virtual = 50829
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 16f189135
+
+Time (s): cpu = 00:02:22 ; elapsed = 00:00:56 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9120 ; free virtual = 50822
+
+Phase 2.3 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.3 Global Clock Net Routing | Checksum: 1146d6af5
+
+Time (s): cpu = 00:02:34 ; elapsed = 00:01:02 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 9040 ; free virtual = 50743
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 2465ad9cb
+
+Time (s): cpu = 00:04:06 ; elapsed = 00:01:27 . Memory (MB): peak = 6121.902 ; gain = 0.000 ; free physical = 8548 ; free virtual = 50251
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.535  | TNS=0.000  | WHS=-2.082 | THS=-720.035|
+
+
+Phase 2.5 Update Timing for Bus Skew
+
+Phase 2.5.1 Update Timing
+Phase 2.5.1 Update Timing | Checksum: 23b9d5ebb
+
+Time (s): cpu = 00:08:30 ; elapsed = 00:02:16 . Memory (MB): peak = 6180.098 ; gain = 58.195 ; free physical = 8084 ; free virtual = 49787
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.535  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 2.5 Update Timing for Bus Skew | Checksum: 1f4f9fb9b
+
+Time (s): cpu = 00:08:31 ; elapsed = 00:02:17 . Memory (MB): peak = 6180.098 ; gain = 58.195 ; free physical = 8089 ; free virtual = 49792
+Phase 2 Router Initialization | Checksum: 21398d88a
+
+Time (s): cpu = 00:08:32 ; elapsed = 00:02:17 . Memory (MB): peak = 6180.098 ; gain = 58.195 ; free physical = 8088 ; free virtual = 49791
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00204391 %
+  Global Horizontal Routing Utilization  = 0.00173611 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 248209
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 193261
+  Number of Partially Routed Nets     = 54948
+  Number of Node Overlaps             = 4
+
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 21398d88a
+
+Time (s): cpu = 00:08:38 ; elapsed = 00:02:19 . Memory (MB): peak = 6180.098 ; gain = 58.195 ; free physical = 8577 ; free virtual = 50281
+Phase 3 Initial Routing | Checksum: 21e1e6bf2
+
+Time (s): cpu = 00:09:44 ; elapsed = 00:02:38 . Memory (MB): peak = 6180.098 ; gain = 58.195 ; free physical = 8376 ; free virtual = 50079
+INFO: [Route 35-580] Design has 40 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|        txoutclk_out[0]_7 |    clk_320_system_clocks |                                                                                 datagen[7].tx_ready_reg/D|
+|        txoutclk_out[0]_5 |    clk_320_system_clocks |                                                                                 datagen[5].tx_ready_reg/D|
+|        txoutclk_out[0]_9 |    clk_320_system_clocks |                                                                                 datagen[9].tx_ready_reg/D|
+|        txoutclk_out[0]_4 |    clk_320_system_clocks |                                                                                 datagen[4].tx_ready_reg/D|
+|        txoutclk_out[0]_1 |    clk_320_system_clocks |                                                                                 datagen[1].tx_ready_reg/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+INFO: [Route 35-443] CLB routing congestion detected. Several CLBs have high routing utilization, which can impact timing closure. Congested CLBs and Nets are dumped in: iter_3_CongestedCLBsAndNets.txt
+ Number of Nodes with overlaps = 48066
+ Number of Nodes with overlaps = 2328
+INFO: [Route 35-443] CLB routing congestion detected. Several CLBs have high routing utilization, which can impact timing closure. Congested CLBs and Nets are dumped in: iter_13_CongestedCLBsAndNets.txt
+ Number of Nodes with overlaps = 63
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.301 | TNS=-0.301 | WHS=-0.579 | THS=-15.942|
+
+Phase 4.1 Global Iteration 0 | Checksum: 1312606ac
+
+Time (s): cpu = 00:16:18 ; elapsed = 00:04:55 . Memory (MB): peak = 6212.113 ; gain = 90.211 ; free physical = 8083 ; free virtual = 49824
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 265
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.103 | TNS=-0.163 | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 27b64cb16
+
+Time (s): cpu = 00:17:59 ; elapsed = 00:05:44 . Memory (MB): peak = 6212.113 ; gain = 90.211 ; free physical = 7836 ; free virtual = 49577
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 143
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.111 | TNS=-0.146 | WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 25f038b15
+
+Time (s): cpu = 00:18:25 ; elapsed = 00:06:03 . Memory (MB): peak = 6212.113 ; gain = 90.211 ; free physical = 8061 ; free virtual = 49802
+Phase 4 Rip-up And Reroute | Checksum: 25f038b15
+
+Time (s): cpu = 00:18:26 ; elapsed = 00:06:03 . Memory (MB): peak = 6212.113 ; gain = 90.211 ; free physical = 8057 ; free virtual = 49798
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1eb226c82
+
+Time (s): cpu = 00:19:28 ; elapsed = 00:06:20 . Memory (MB): peak = 6212.113 ; gain = 90.211 ; free physical = 8093 ; free virtual = 49834
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.103 | TNS=-0.163 | WHS=-0.130 | THS=-0.246 |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 2217568ea
+
+Time (s): cpu = 00:19:43 ; elapsed = 00:06:24 . Memory (MB): peak = 6212.113 ; gain = 90.211 ; free physical = 8123 ; free virtual = 49864
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 2217568ea
+
+Time (s): cpu = 00:19:44 ; elapsed = 00:06:25 . Memory (MB): peak = 6212.113 ; gain = 90.211 ; free physical = 8120 ; free virtual = 49862
+Phase 5 Delay and Skew Optimization | Checksum: 2217568ea
+
+Time (s): cpu = 00:19:45 ; elapsed = 00:06:25 . Memory (MB): peak = 6212.113 ; gain = 90.211 ; free physical = 8101 ; free virtual = 49842
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 170410a00
+
+Time (s): cpu = 00:20:52 ; elapsed = 00:06:43 . Memory (MB): peak = 6212.113 ; gain = 90.211 ; free physical = 8132 ; free virtual = 49873
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.227  | TNS=0.000  | WHS=-0.130 | THS=-0.246 |
+
+Phase 6.1 Hold Fix Iter | Checksum: 14634b547
+
+Time (s): cpu = 00:20:56 ; elapsed = 00:06:46 . Memory (MB): peak = 6212.113 ; gain = 90.211 ; free physical = 8094 ; free virtual = 49836
+Phase 6 Post Hold Fix | Checksum: 159827f21
+
+Time (s): cpu = 00:20:57 ; elapsed = 00:06:47 . Memory (MB): peak = 6212.113 ; gain = 90.211 ; free physical = 8094 ; free virtual = 49835
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 11.4475 %
+  Global Horizontal Routing Utilization  = 12.5 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1cbcbe8db
+
+Time (s): cpu = 00:21:08 ; elapsed = 00:06:53 . Memory (MB): peak = 6237.754 ; gain = 115.852 ; free physical = 8133 ; free virtual = 49874
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1cbcbe8db
+
+Time (s): cpu = 00:21:09 ; elapsed = 00:06:54 . Memory (MB): peak = 6237.754 ; gain = 115.852 ; free physical = 8108 ; free virtual = 49850
+
+Phase 9 Depositing Routes
+INFO: [Route 35-467] Router swapped GT pin datagen[0].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTHE3_CHANNEL_X0Y10/SOUTHREFCLK1
+INFO: [Route 35-467] Router swapped GT pin datagen[1].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTHE3_CHANNEL_X0Y9/SOUTHREFCLK1
+INFO: [Route 35-467] Router swapped GT pin datagen[2].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTHE3_CHANNEL_X0Y16/NORTHREFCLK1
+INFO: [Route 35-467] Router swapped GT pin datagen[3].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTHE3_CHANNEL_X0Y17/NORTHREFCLK1
+INFO: [Route 35-467] Router swapped GT pin datagen[4].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTHE3_CHANNEL_X0Y18/NORTHREFCLK1
+INFO: [Route 35-467] Router swapped GT pin datagen[5].xlx_ku_mgt_10g24_inst/xlx_ku_mgt_std_i/inst/gen_gtwizard_gthe3_top.xlx_ku_mgt_ip_10g24_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[2].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTHE3_CHANNEL_X0Y19/NORTHREFCLK1
+Phase 9 Depositing Routes | Checksum: 1cbcbe8db
+
+Time (s): cpu = 00:21:28 ; elapsed = 00:07:07 . Memory (MB): peak = 6269.770 ; gain = 147.867 ; free physical = 8062 ; free virtual = 49803
+
+Phase 10 Post Router Timing
+
+Phase 10.1 Update Timing
+Phase 10.1 Update Timing | Checksum: 2329b255e
+
+Time (s): cpu = 00:22:37 ; elapsed = 00:07:28 . Memory (MB): peak = 6269.770 ; gain = 147.867 ; free physical = 7911 ; free virtual = 49653
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.227  | TNS=0.000  | WHS=0.004  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 2329b255e
+
+Time (s): cpu = 00:22:37 ; elapsed = 00:07:29 . Memory (MB): peak = 6269.770 ; gain = 147.867 ; free physical = 7789 ; free virtual = 49531
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:22:38 ; elapsed = 00:07:30 . Memory (MB): peak = 6269.770 ; gain = 147.867 ; free physical = 8191 ; free virtual = 49932
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+203 Infos, 8 Warnings, 46 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:23:31 ; elapsed = 00:07:43 . Memory (MB): peak = 6269.770 ; gain = 147.867 ; free physical = 8191 ; free virtual = 49932
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+source /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Hog/Tcl/integrated/post-implementation.tcl
+INFO: [Hog:Msg-0] Evaluating Git sha for etl_test_fw...
+INFO: [Hog:GetRepoVersions-0] Hog submodule /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Hog clean.
+INFO: [Hog:GetRepoVersions-0] Git working directory /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Top/etl_test_fw clean.
+INFO: [Hog:Msg-0] Git describe set to: v3.2.0-hogcdb5e5c
+INFO: [Hog:Msg-0] Evaluating last git SHA in which etl_test_fw was modified...
+INFO: [Hog:GetRepoVersions-0] Hog submodule /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Hog clean.
+INFO: [Hog:GetRepoVersions-0] Git working directory /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Top/etl_test_fw clean.
+CRITICAL WARNING: [Hog:Msg-0] Multithreading enabled. Number of threads: 12
+INFO: [Hog:Msg-0] The git SHA value cdb5e5c will be embedded in the binary file.
+INFO: [Hog:Msg-0] Sourcing user post_implementation file ./Top//etl_test_fw/post-implementation.tcl
+INFO: [Hog:Msg-0] Evaluating Git sha for etl_test_fw...
+INFO: [Hog:GetRepoVersions-0] Hog submodule /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Hog clean.
+INFO: [Hog:GetRepoVersions-0] Git working directory /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/Top/etl_test_fw clean.
+INFO: [Hog:Msg-0] Git describe set to: v3.2.0-hogcdb5e5c
+INFO: [Hog:Msg-0] Creating /home/gitlab-runner/builds/q6jzMzCh/0/cms-etl-electronics/module_test_fw/bin/etl_test_fw-v3.2.0-hogcdb5e5c...
+INFO: [Hog:Msg-0] Evaluating differences with last commit...
+INFO: [Hog:Msg-0] No uncommitted changes found.
+report_utilization: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 6269.770 ; gain = 0.000 ; free physical = 664 ; free virtual = 42968

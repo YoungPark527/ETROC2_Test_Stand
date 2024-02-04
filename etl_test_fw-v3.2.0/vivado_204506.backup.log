@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Feb  2 14:24:54 2024
+# Process ID: 204506
+# Current directory: /home/daq/ETROC2_Test_Stand/etl_test_fw-v3.2.0
+# Command line: vivado -mode batch -source program.tcl -notrace -tclargs
+# Log file: /home/daq/ETROC2_Test_Stand/etl_test_fw-v3.2.0/vivado.log
+# Journal file: /home/daq/ETROC2_Test_Stand/etl_test_fw-v3.2.0/vivado.jou
+# Running On: timingdaq03.dhcp.fnal.gov, OS: Linux, CPU Frequency: 4100.000 MHz, CPU Physical cores: 4, Host memory: 33324 MB
+#-----------------------------------------------------------
+source program.tcl -notrace
+Device=xcku040_0
+Target localhost:3121/xilinx_tcf/Digilent/210308AB10A4 xcku040_0 found, press y key to continue.
+ > Programming localhost:3121/xilinx_tcf/Digilent/210308AB10A4
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210308AB10A4
+do you want to program the Flash? y/n
+ > Programming FPGA
+INFO: [Labtools 27-1435] Device xcku040 (JTAG device index = 0) is not programmed (DONE status = 0).
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 3837.984 ; gain = 1.000 ; free physical = 12631 ; free virtual = 25619
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210308AB10A4
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  2 14:25:17 2024...
