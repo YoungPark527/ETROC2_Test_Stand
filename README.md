@@ -34,11 +34,11 @@ source Merging.sh
 python3 merge_scope_etroc.py
 ```
 
-7) ETROC data taking
+6) Taking data from ETROC
 ```
 cd /home/daq/
 source Test_Stand.sh
-ipython test_tamalero.py -- --control_hub --kcu 192.168.0.10 --verbose --configuration modulev0b --power_up
+ipython test_tamalero.py -- --control_hub --kcu $DAQ_assistant_ID --verbose --configuration modulev0b --power_up
 ipython -i test_ETROC.py -- --test_chip --hard_reset --partial --configuration modulev0b --module 1 
 (and make sure that the lpGBT connections are locked)
 ./reset_and_run.sh $number_of_events
@@ -46,7 +46,7 @@ ipython -i test_ETROC.py -- --test_chip --hard_reset --partial --configuration m
 
 To run the Acquisition and the ETROC data taking and Autopilot can be used:
 
-Autopilot
+7) Autopilot
 ```
 cd /home/daq/
 source Autopilot.sh
