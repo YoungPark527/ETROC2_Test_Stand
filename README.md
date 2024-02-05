@@ -1,6 +1,6 @@
 # ETROC2 Test Stand software.
 The test stand consists of the radiation source, the module and the readout board which are attached to a cooling system, the KCU DAQ assistant and the oscilloscope (Fig.1).
-![alt text](./Diagrams/the_setup.png)
+![alt text](./diagrams/the_setup.png)
 
 # Setting up the python environment:
 ```
@@ -35,7 +35,7 @@ source Merging.sh
 python3 merge_scope_etroc.py
 ```
 
-![alt text](./Diagrams/data_flow.png)
+![alt text](./diagrams/data_flow.png)
 
 6) Taking data from KCU.
 ```
