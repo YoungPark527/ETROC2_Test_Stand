@@ -17,7 +17,7 @@ initial = time.time()
 RawDataPath = ""
 RawDataLocalCopyPath = ""
 #OutputFilePath = "/home/daq/ScopeData/LecroyConverted/"
-OutputFilePath = "/home/daq/SurvivalBeam2021/LecroyScope/RecoData/ConversionRECO/"
+OutputFilePath = "/home/daq/SurvivalBeam2021/LecroyScope/RecoData/ConversionRECO/" # ADD THE LOCAL CONVERTED DATA PATH
 eosPath = "root://cmseos.fnal.gov//store/group/cmstestbeam/SurvivalBeam2021/LecroyScope/RecoData/ConversionRECO/"
 
 LocalMode=True
@@ -28,8 +28,8 @@ if os.path.exists("_condor_stdout"):
 	LocalMode=False
 
 if LocalMode:
-	RawDataPath = "/home/daq/LecroyMount/"
-	RawDataLocalCopyPath = "/home/daq/SurvivalBeam2021/LecroyScope/RawData/"
+	RawDataPath = "/home/daq/LecroyMount/" # ADD THE LECROY SCOPE RAW DATA FOLDER
+	RawDataLocalCopyPath = "/home/daq/SurvivalBeam2021/LecroyScope/RawData/" # ADD THE LOCAL RAW DATA PATH
 
 	# RawDataLocalCopyPath = "/home/daq/ScopeData/LecroyRaw/"
 if not LocalMode:

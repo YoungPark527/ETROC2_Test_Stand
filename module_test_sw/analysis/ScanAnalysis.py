@@ -14,22 +14,17 @@ import pandas as pd
 base             = "/home/daq/ETROC2_Test_Stand/ScopeHandler/ScopeData/LecroyMerged"
 # legend_label     = "Laser Width"
 # scanning_version = "TEST_Laser_width"
-legend_label     = "TEST"
-scanning_version = "TEST"
+legend_label     = "TEST_Second_peak"
+scanning_version = "TEST_Second_peak"
 output_folder    = f"/home/daq/ETROC2_Test_Stand/module_test_sw/analysis/plots_{scanning_version}"
 unit             = "V"
 os.system(f"mkdir -p {output_folder}")
 
-# y_axis = [10877,10878,10879]
-# x_axis = [  20,10,15]
+# y_axis = [10898,10899, 10900]
+# x_axis = [185, 195, 205]
 
-#y_axis = [10894,10895, 10896, 10897, 10898]
-#x_axis = [ 5,  15, 20, 25, 30]
-
-y_axis = [10898,10899, 10900]
-#x_axis = [20, 20] ## laser width
-x_axis = [185, 195, 205]
-
+y_axis = [10904]
+x_axis = [205]
 
 a = 10
 c = 1
@@ -62,10 +57,10 @@ def load_data(indices):
             output[i]["row"]   = tree["row"].array()
             output[i]["col"]   = tree["col"].array()
             # Get the timestamps
-            for c in [6, 7]:                        # The index of the scope channel
+            for c in [6, 7]: # The index of the scope channel
                 for p in [20]: # The percentage of amplitude value
                     if c == 6:
-                        output[i][f"LP2_{p}_{c}"] = tree["Clock"].array()[:, 0] # tree[f"linear_RE_{p}"].array()[:, c]
+                        output[i][f"LP2_{p}_{c}"] = tree["Clock"].array() # [:, c] # tree[f"linear_RE_{p}"].array()[:, c]
                     if c == 7:
                         output[i][f"LP2_{p}_{c}"] = tree[f"LP2_{p}"].array()[:, c]
     return output
@@ -128,102 +123,50 @@ def plots(data, x_axis):
     DT       = [[] for i in range(4)]
     hits     = []
     hits_    = [[] for i in range(len(x_axis))]
-    LP2_20_6_= [[] for i in range(len(x_axis))]
-    LP2_30_6_= [[] for i in range(len(x_axis))]
-    LP2_35_6_= [[] for i in range(len(x_axis))]
-    LP2_40_6_= [[] for i in range(len(x_axis))]
-    LP2_50_6_= [[] for i in range(len(x_axis))]
-    LP2_60_6_= [[] for i in range(len(x_axis))]
-    LP2_70_6_= [[] for i in range(len(x_axis))]
-    LP2_80_6_= [[] for i in range(len(x_axis))]
-    LP2_20_7_= [[] for i in range(len(x_axis))]
-    LP2_30_7_= [[] for i in range(len(x_axis))]
-    LP2_35_7_= [[] for i in range(len(x_axis))]
-    LP2_40_7_= [[] for i in range(len(x_axis))]
-    LP2_50_7_= [[] for i in range(len(x_axis))]
-    LP2_60_7_= [[] for i in range(len(x_axis))]
-    LP2_70_7_= [[] for i in range(len(x_axis))]
-    LP2_80_7_= [[] for i in range(len(x_axis))]
+    LP2_20_6_= [[] for i in range(len(x_axis))] # Clock time stamp
+    LP2_20_7_= [[] for i in range(len(x_axis))] # Trigger time stamp
     for d_i, d in enumerate(data):
-        # print("Variable: ", x_axis[d_i])
-        # print("===========================> ", f"{legend_label}: {x_axis[d_i]} {unit}")
-        # print(f"Number of events: {len(sel)}")
         cutflow_tables = {}
+        LP2_20_6 = d["LP2_20_6"]
+        LP2_20_7 = d["LP2_20_7"]*10**9
+
         sel = ((d["nhits"] > 0)) # Select events with at least one hit.
         row = d["row"][sel]
         col = d["col"][sel]
         toa = d["TOA"][sel]
         tot = d["TOT"][sel]
         cal = d["CAL"][sel]
-        row = fill_empty_arrays(row)
-        col = fill_empty_arrays(col)
-        toa = fill_empty_arrays(toa)
-        tot = fill_empty_arrays(tot)
-        cal = fill_empty_arrays(cal)
-        LP2_20_6 = d["LP2_20_6"][sel] # np.array([rescale(e) for e in d["LP2_20_6"][sel]])
-        # LP2_30_6 = d["LP2_30_6"][sel]*10**9
-        # LP2_35_6 = d["LP2_35_6"][sel]*10**9
-        # LP2_40_6 = d["LP2_40_6"][sel]*10**9
-        # LP2_50_6 = d["LP2_50_6"][sel]*10**9
-        # LP2_60_6 = d["LP2_60_6"][sel]*10**9
-        # LP2_70_6 = d["LP2_70_6"][sel]*10**9
-        # LP2_80_6 = d["LP2_80_6"][sel]*10**9
-        LP2_20_7 = d["LP2_20_7"][sel]*10**9
-        # LP2_30_7 = d["LP2_30_7"][sel]*10**9
-        # LP2_35_7 = d["LP2_35_7"][sel]*10**9
-        # LP2_40_7 = d["LP2_40_7"][sel]*10**9
-        # LP2_50_7 = d["LP2_50_7"][sel]*10**9
-        # LP2_60_7 = d["LP2_60_7"][sel]*10**9
-        # LP2_70_7 = d["LP2_70_7"][sel]*10**9
-        # LP2_80_7 = d["LP2_80_7"][sel]*10**9
-        # LP2_20_6 = np.array([rescale(i) for i in LP2_20_6])
-        # LP2_30_6 = np.array([rescale(i) for i in LP2_30_6])
-        # LP2_35_6 = np.array([rescale(i) for i in LP2_35_6])
-        # LP2_40_6 = np.array([rescale(i) for i in LP2_40_6])
-        # LP2_50_6 = np.array([rescale(i) for i in LP2_50_6])
-        # LP2_60_6 = np.array([rescale(i) for i in LP2_60_6])
-        # LP2_70_6 = np.array([rescale(i) for i in LP2_70_6])
-        # LP2_80_6 = np.array([rescale(i) for i in LP2_80_6])
+        LP2_20_6 = LP2_20_6[sel]
+        LP2_20_7 = LP2_20_7[sel]
+
         hits.append(d["nhits"])
         for p in [0,1,2,3]:
             cuts = {}
+            # SELECTION OF THE PIXEL
             pixel_sel = ((row == 15) & (col == p)) # Select hits from a particular pixel.
             print(f"Row: 15, Col: {p}")
+
             toa_ = toa[pixel_sel]
             tot_ = tot[pixel_sel]
             cal_ = cal[pixel_sel]
+
             obj = {"TOA": toa_, "TOT": tot_, "CAL": cal_}
-            event_sel = (LP2_20_6 != 0.0) # Select events for which the clock timestamp is not 0.
-            toa_ = toa_[event_sel]
-            tot_ = tot_[event_sel]
-            cal_ = cal_[event_sel]
-            element_sel = ((cal_ > 195) & (cal_ < 205) & (tot_ > 0)) # Other object level selections.
+            # ELEMENT LEVEL SELECTION
+            element_sel = ((cal_ > 195) & (cal_ < 205) & (tot_ > 4)) # Other object level selections.
+            toa_ = toa_[element_sel]
             tot_ = tot_[element_sel]
             cal_ = cal_[element_sel]
-            tot_ = fill_empty_arrays(tot_)[:,0]
-            cal_ = fill_empty_arrays(cal_)[:,0]
-            toa_ = fill_empty_arrays(toa_)[:,0]
-            maps = np.ones(len(toa_), dtype = bool)
-            LP2_20_6_[d_i] = LP2_20_6 [event_sel][maps]
-            # LP2_30_6_[d_i] = LP2_30_6 [event_sel][maps]
-            # LP2_35_6_[d_i] = LP2_35_6 [event_sel][maps]
-            # LP2_40_6_[d_i] = LP2_40_6 [event_sel][maps]
-            # LP2_50_6_[d_i] = LP2_50_6 [event_sel][maps]
-            # LP2_60_6_[d_i] = LP2_60_6 [event_sel][maps]
-            # LP2_70_6_[d_i] = LP2_70_6 [event_sel][maps]
-            # LP2_80_6_[d_i] = LP2_80_6 [event_sel][maps]
-            LP2_20_7_[d_i] = LP2_20_7 [event_sel][maps]
-            # LP2_30_7_[d_i] = LP2_30_7 [event_sel][maps]
-            # LP2_35_7_[d_i] = LP2_35_7 [event_sel][maps]
-            # LP2_40_7_[d_i] = LP2_40_7 [event_sel][maps]
-            # LP2_50_7_[d_i] = LP2_50_7 [event_sel][maps]
-            # LP2_60_7_[d_i] = LP2_60_7 [event_sel][maps]
-            # LP2_70_7_[d_i] = LP2_70_7 [event_sel][maps]
-            # LP2_80_7_[d_i] = LP2_80_7 [event_sel][maps]
-            hits_    [d_i] = hits[d_i][event_sel][maps]
-            toa_ = toa_[maps]
-            tot_ = tot_[maps]
-            cal_ = cal_[maps]
+
+            # EVENT LEVEL SELECTION
+            event_sel = ((ak.count(toa_, axis = 1) > 0) & (LP2_20_6 > -4)) # Select events for which the clock timestamp is not 0.
+            toa_ = toa_[event_sel][:,0]
+            tot_ = tot_[event_sel][:,0]
+            cal_ = cal_[event_sel][:,0]
+
+            LP2_20_6_[d_i] = LP2_20_6 [event_sel]
+            LP2_20_7_[d_i] = LP2_20_7 [event_sel]
+            hits_    [d_i] = hits[d_i][event_sel]
+
             mean_toa   [p].append(np.mean(toa_))
             mean_tot   [p].append(np.mean(tot_))
             mean_cal   [p].append(np.mean(cal_))
@@ -267,16 +210,6 @@ def plots(data, x_axis):
         plt.close()
 
     # Plot histograms.
-    '''
-    variables = [TOA  ,  TOT ,  CAL , \
-                 LP2_20_6_ ,  LP2_30_6_ ,  LP2_35_6_ ,  LP2_40_6_ , LP2_50_6_  ,  LP2_60_6_ ,  LP2_70_6_ ,  LP2_80_6_ , \
-                 LP2_20_7_ ,  LP2_30_7_ ,  LP2_35_7_ ,  LP2_40_7_ , LP2_50_7_  ,  LP2_60_7_ ,  LP2_70_7_ ,  LP2_80_7_ ,   hits_ ,   DT]
-
-    labels    = ["TOA", "TOT", "CAL", \
-                 "LP2_20_6_", "LP2_30_6_", "LP2_35_6_", "LP2_40_6_", "LP2_50_6_", "LP2_60_6_", "LP2_70_6_", "LP2_80_6_", \
-                 "LP2_20_7_", "LP2_30_7_", "LP2_35_7_", "LP2_40_7_", "LP2_50_7_", "LP2_60_7_", "LP2_70_7_", "LP2_80_7_", "hits", "DT"]
-    '''
-
     variables = [TOA  ,  TOT ,  CAL , \
                  LP2_20_6_ ,   \
                  LP2_20_7_ ,  hits_ ,   DT]
@@ -288,6 +221,7 @@ def plots(data, x_axis):
     vars      = dict(zip(labels, variables))
 
     for v, var in enumerate(variables):
+        # t = ROOT.TText(0.5,0.0,f"Number of events: {len(var)}");
         if labels[v] == "TOA" or labels[v] == "TOT" or labels[v] == "CAL" or labels[v] == "DT":
             fig, ax = plt.subplots(2, 2, figsize = (2*a*c, 2*a))
             for p in range(4):
@@ -295,17 +229,21 @@ def plots(data, x_axis):
                 maximum = max([max(var[p][i]) if len(var[p][i]) != 0 else 0     for i in range(len(x_axis))])
                 x = int(np.floor(p / 2))
                 y = int(p % 2)
-                for j in range(len(x_axis)):
-                    bins = np.linspace(minimum, maximum, 70)
-                    weights = np.ones(len(var[p][j])) / len(var[p][j])
-                    ax[x][y].hist(var[p][j], label = f"{legend_label}: {x_axis[j]} {unit}", bins = bins, histtype = "step", weights = weights, linewidth=2.5)
-                ax[x][y].set_xlabel(labels[v],loc='center')
-                ax[x][y].set_ylabel("Events",loc='center')
-                ax[x][y].set_title(f"Row: 15, Col: {p}")
-                ax[x][y].xaxis.set_major_formatter(mpl.ticker.ScalarFormatter(useOffset=False))
+                try:
+                    for j in range(len(x_axis)):
+                        bins = np.linspace(minimum, maximum, 70)
+                        weights = np.ones(len(var[p][j])) / len(var[p][j])
+                        ax[x][y].hist(var[p][j], label = f"{legend_label}: {x_axis[j]} {unit}", bins = bins, histtype = "step", weights = weights, linewidth=2.5)
+                    ax[x][y].set_xlabel(labels[v],loc='center')
+                    ax[x][y].set_ylabel("Events",loc='center')
+                    ax[x][y].set_title(f"Row: 15, Col: {p}")
+                    ax[x][y].xaxis.set_major_formatter(mpl.ticker.ScalarFormatter(useOffset=False))
+                except:
+                     print("No statistics.")
                 handles, label = ax[x][y].get_legend_handles_labels()
                 idx = np.sort(np.unique(np.array(label), return_index=True)[1])
                 ax[x][y].legend(np.array(label)[idx])
+                # ax[x][y].text(0.05, 0.95 - 0.05*, f"Number of events: {len(var)}")
             fig.savefig(f"{output_folder}/{labels[v]}_HIST.png")
             plt.close()
         else:
@@ -317,13 +255,16 @@ def plots(data, x_axis):
             for j in range(len(x_axis)):
                 bins = np.linspace(minimum, maximum, 70)
                 weights = np.ones(len(var[j])) / len(var[j])
-                if labels[v] == 'hits':
-                    bins = 5
-                    ran = (0,5)
-                    ax.hist(var[j], label = f"{legend_label}: {x_axis[j]} {unit}",range=ran, bins = bins, histtype = "step", weights = weights, linewidth=2.5)
-                    ax.set_xlim(0,5)
-                else:
-                    ax.hist(var[j], label = f"{legend_label}: {x_axis[j]} {unit}", bins = bins, histtype = "step", weights = weights, linewidth=2.5)
+                try:
+                    if labels[v] == 'hits':
+                        bins = 5
+                        ran = (0,5)
+                        ax.hist(var[j], label = f"{legend_label}: {x_axis[j]} {unit}",range=ran, bins = bins, histtype = "step", weights = weights, linewidth=2.5)
+                        ax.set_xlim(0,5)
+                    else:
+                        ax.hist(var[j], label = f"{legend_label}: {x_axis[j]} {unit}", bins = bins, histtype = "step", weights = weights, linewidth=2.5)
+                except:
+                    print("No statistics.")
             ax.set_xlabel(labels[v],loc='center')
             ax.set_ylabel("Events",loc='center')
             handles, label = ax.get_legend_handles_labels()
@@ -333,7 +274,7 @@ def plots(data, x_axis):
             fig.savefig(f"{output_folder}/{labels[v]}_HIST.png")
             plt.tight_layout()
             plt.close()
-
+    print(len(DT))
     for i in range(len(x_axis)): # toa vs tot
         fig, ax = plt.subplots(2, 2, figsize = (2*a*c, 2*a))
         for p in range(4):
@@ -346,6 +287,7 @@ def plots(data, x_axis):
             ax[x][y].xaxis.set_major_formatter(mpl.ticker.ScalarFormatter(useOffset=False))
         fig.savefig(f"{output_folder}/TOA_vs_TOT_row_15_col_{p}_{x_axis[i]}.png")
 
+    '''
     for i in range(len(x_axis)): # tot vs Clock
         fig, ax = plt.subplots(1, 1, figsize = (2*a*c, 2*a))
         ax.hist2d(np.array(variables[3][i]), np.array(variables[1][i]), bins = (50, 50))
@@ -363,6 +305,7 @@ def plots(data, x_axis):
         ax.set_ylabel("Clock",loc='center')
         ax.xaxis.set_major_formatter(mpl.ticker.ScalarFormatter(useOffset=False))
         fig.savefig(f"{output_folder}/DT_Clock_{x_axis[i]}.png")
+    '''
 
     if do_Delta_T_Gaussian_fit:
         fig, ax = plt.subplots(2, 2, figsize = (2*a*c, 2*a))

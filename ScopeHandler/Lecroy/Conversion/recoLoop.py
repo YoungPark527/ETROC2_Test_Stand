@@ -15,9 +15,9 @@ import argparse
 
 ####Use setup script in home area (setup.sh)
 
-raw_path = "/home/daq/LecroyMount/"
-converted_path = "/home/daq/ETROC2_Test_Stand/ScopeHandler/ScopeData/LecroyConverted/"
-reco_path ="/home/daq/ETROC2_Test_Stand/ScopeHandler/ScopeData/LecroyTimingDAQ/"
+raw_path = "/home/daq/LecroyMount/" # ADD THE LECROY SCOPE RAW DATA FOLDER
+converted_path = "../../ScopeHandler/ScopeData/LecroyConverted/"
+reco_path ="../../ScopeHandler/ScopeData/LecroyTimingDAQ/"
 
 parser = argparse.ArgumentParser(description='Run info.')
 
@@ -47,17 +47,17 @@ def RunEntriesScope(FileLocation, LGADChannels, LGADThreshold):
 
 LGADChannels=[0,1,2,7]
 Threshold=15
-acquisition_ready         = open("/home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/Acquisition/merging.txt",             "r").read() # This flag says if the acquisition data is ready to be merged.
-running_acquitision_SCOPE = open("/home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/Acquisition/running_acquitision.txt", "r").read() # This flag says if the scope acquisition is still running.
-running_acquitision_ETROC = open("/home/daq/ETROC2_Test_Stand/module_test_sw/running_ETROC_acquisition.txt",            "r").read() # This flag says if the KCU acquisition is still running.
+acquisition_ready         = open("../../ScopeHandler/Lecroy/Acquisition/merging.txt",             "r").read() # This flag says if the acquisition data is ready to be merged.
+running_acquitision_SCOPE = open("../../ScopeHandler/Lecroy/Acquisition/running_acquitision.txt", "r").read() # This flag says if the scope acquisition is still running.
+running_acquitision_ETROC = open("../../module_test_sw/running_ETROC_acquisition.txt",            "r").read() # This flag says if the KCU acquisition is still running.
 print("acquisition_ready: ", acquisition_ready)
 print("running_acquitision_SCOPE: ", running_acquitision_SCOPE)
 print("running_acquitision_ETROC: ", running_acquitision_ETROC)
 
 while True:
-    acquisition_ready         = open("/home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/Acquisition/merging.txt",             "r").read() # This flag says if the acquisition data is ready to be merged.
-    running_acquitision_SCOPE = open("/home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/Acquisition/running_acquitision.txt", "r").read() # This flag says if the scope acquisition is still running.
-    running_acquitision_ETROC = open("/home/daq/ETROC2_Test_Stand/module_test_sw/running_ETROC_acquisition.txt",            "r").read() # This flag says if the KCU acquisition is still running.
+    acquisition_ready         = open("../../ScopeHandler/Lecroy/Acquisition/merging.txt",             "r").read() # This flag says if the acquisition data is ready to be merged.
+    running_acquitision_SCOPE = open("../../ScopeHandler/Lecroy/Acquisition/running_acquitision.txt", "r").read() # This flag says if the scope acquisition is still running.
+    running_acquitision_ETROC = open("../../module_test_sw/running_ETROC_acquisition.txt",            "r").read() # This flag says if the KCU acquisition is still running.
     if (not (running_acquitision_SCOPE == "False" and acquisition_ready == "True")): continue
     ListRawFiles = [(x.split('C8--Trace')[1].split('.trc')[0]) for x in glob.glob('%s/C8--Trace*'%raw_path)]
     SetRawFiles = set([int(x) for x in ListRawFiles])
@@ -74,7 +74,7 @@ while True:
 
     for run in SetRawFiles:
         RecoPath = '%s/converted_run%i.root' % (converted_path,run)
-        RawPath = 'C8--Trace%i.trc' % run
+        RawPath = 'C5--Trace%i.trc' % run
 
         print('lsof -f --/home/daq/LecroyMount/%s |grep -Eoi %s' % (RawPath, RawPath))
         if os.path.exists(RecoPath):
@@ -84,10 +84,10 @@ while True:
             print('Converting run ', run)
             if not useSingleEvent: 
                 print("using conversion")
-                ConversionCmd = "python3 /home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/Conversion/conversion.py --runNumber %i" % (run)
+                ConversionCmd = "python3 ../../ScopeHandler/Lecroy/Conversion/conversion.py --runNumber %i" % (run)
             else:
                 print("using one event conversion")
-                ConversionCmd = "python3 /home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/Conversion/conversion_one_event.py --runNumber %i" % (run)
+                ConversionCmd = "python3 ../../ScopeHandler/Lecroy/Conversion/conversion_one_event.py --runNumber %i" % (run)
             os.system(ConversionCmd)
         
         if useSingleEvent: continue
@@ -95,7 +95,7 @@ while True:
         
         OutputFile = '%s/run_scope%i.root' % (reco_path, run)
         # OutputFile = '%s/run_scope%i.root' % (converted_path, run)
-        DattorootCmd = '/home/daq/ETROC2_Test_Stand/TimingDAQ/NetScopeStandaloneDat2Root --correctForTimeOffsets --input_file=%s/converted_run%i.root --output_file=%s --config=/home/daq/ETROC2_Test_Stand/TimingDAQ/config/LecroyScope_v12.config --save_meas'  % (converted_path,run,OutputFile)
+        DattorootCmd = '../../TimingDAQ/NetScopeStandaloneDat2Root --correctForTimeOffsets --input_file=%s/converted_run%i.root --output_file=%s --config=/home/daq/ETROC2_Test_Stand/TimingDAQ/config/LecroyScope_v12.config --save_meas'  % (converted_path,run,OutputFile)
         # need the correct executable script to make the reco files
 
         print(DattorootCmd)
@@ -113,23 +113,13 @@ while True:
 
         print('Now moving the converted and raw data to backup')
         # # #Here moving the converted and raw data to backup
-        # os.system('mv %s/converted_run%i.root /run/media/daq/ScanBackup/LecroyBackup/Converted/' % (converted_path,run))  #
-        # os.system('mv %s/converted_run%i.root /home/daq/BACKUP_CONVERTED/' % (converted_path,run))  #
-        # os.system('mv /home/daq/ETROC2_Test_Stand/ScopeHandler/ScopeData/LecroyRaw/C*--Trace%i.trc /run/media/daq/ScanBackup/LecroyBackup/Raw/' % (run)) # need to make the backup folder
-        os.system('mv /home/daq/ETROC2_Test_Stand/ScopeHandler/ScopeData/LecroyRaw/C*--Trace%i.trc /media/daq/ScanBackup/LecroyBackup/Raw/' % (run)) # need to make the backup folder
+        os.system('mv ../../ScopeHandler/ScopeData/LecroyRaw/C*--Trace%i.trc /media/daq/ScanBackup/LecroyBackup/Raw/' % (run)) # ADD THE BACKUP FOLDER
         print(run)
-        # os.system('mv /home/daq/ETROC2_Test_Stand/ScopeHandler/ScopeData/LecroyRaw/C*--Trace%i.trc /home/daq/BACKUP/' % (run)) # Immitation of making backup files in: /home/daq/BACKUP/
 
         # #Here making a link from the ScopeData directory to the backup
-        for i in range(1,9):
-            # /media/daq/G-DRIVE/
-            # os.system('ln -s /run/media/daq/ScanBackup/LecroyBackup/Raw/C%i--Trace%i.trc /home/daq/ScopeData/LecroyRaw/' % (i,run)) # same here there is no backup folder
-            os.system('ln -s /media/daq/ScanBackup/LecroyBackup/Raw/C%i--Trace%i.trc /home/daq/ScopeData/LecroyRaw/' % (i,run)) # same here there is no backup folder
-            # os.system('ln -s /home/daq/BACKUP/C%i--Trace%i.trc /home/daq/ETROC2_Test_Stand/ScopeHandler/ScopeData/LecroyRaw/' % (i,run)) # Immitation of linking backup files from: /home/daq/BACKUP/
-        # os.system('ln -s /run/media/daq/ScanBackup/LecroyBackup/Converted/converted_run%i.root %s/converted_run%i.root' % (run,converted_path,run)) 
+        for i in range(1,5): #
+            os.system('ln -s /media/daq/ScanBackup/LecroyBackup/Raw/C%i--Trace%i.trc /home/daq/ScopeData/LecroyRaw/' % (i,run)) # ADD THE BACKUP FOLDER
         os.system('ln -s /media/daq/ScanBackup/LecroyBackup/Converted/converted_run%i.root %s/converted_run%i.root' % (run,converted_path,run)) 
-        # os.system('ln -s /home/daq/BACKUP_CONVERTED/converted_run%i.root %s/converted_run%i.root' % (run,converted_path,run)) # Immitation of linking backup files from: /home/daq/BACKUP_CONVERTED/
-        # The reco files were not created because the executable file is not there.
         print('Done Moving and creating the link')
         if can_be_later_merged:
             f = open("./merging.txt", "w")

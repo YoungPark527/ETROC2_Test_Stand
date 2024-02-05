@@ -27,7 +27,7 @@ trigSlope = "POS"
 timeoffset = 0 #ns
 # timeoffset = 12.5 #ns
 runNumber = -1 ### -1 means use serial number
-ScopeControlDir = "/home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/"
+ScopeControlDir = "../../ScopeHandler/Lecroy/"
 
 def ScopeAcquisition(numEvents):
 	print("\n ####################### Running the scope acquisition ##################################\n")
@@ -39,25 +39,25 @@ def ScopeAcquisition(numEvents):
 	os.system(ScopeCommand)
 		    
 if __name__ == "__main__":
-	kcu_acquisition_flag = open("/home/daq/ETROC2_Test_Stand/module_test_sw/running_ETROC_acquisition.txt").read()
+	kcu_acquisition_flag = open("../../module_test_sw/running_ETROC_acquisition.txt").read()
 	print(kcu_acquisition_flag)
 	iteration = 0
 	while kcu_acquisition_flag == "False":
 	    if iteration == 0:
 	        print(f"Waiting for the KCU.")
-	    kcu_acquisition_flag = open("/home/daq/ETROC2_Test_Stand/module_test_sw/running_ETROC_acquisition.txt").read()
+	    kcu_acquisition_flag = open("../../module_test_sw/running_ETROC_acquisition.txt").read()
 	    iteration+=1
-	f = open("/home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/Acquisition/running_acquitision.txt", "w")
+	f = open("../../ScopeHandler/Lecroy/Acquisition/running_acquitision.txt", "w")
 	f.write("True")
 	f.truncate()
 	f.close()
 	numEvents = int(sys.argv[1])
 	ScopeAcquisition(numEvents)
-	f = open("/home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/Acquisition/running_acquitision.txt", "w")
+	f = open("../../ScopeHandler/Lecroy/Acquisition/running_acquitision.txt", "w")
 	f.write("False")
 	f.truncate()
 	f.close()
-	f = open("/home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/Acquisition/merging.txt", "w")
+	f = open("../../ScopeHandler/Lecroy/Acquisition/merging.txt", "w")
 	f.write("True")
 	f.truncate()
 	f.close()

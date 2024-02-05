@@ -9,33 +9,28 @@ import time
 import pdb
 import os
 
-raw_path = "/home/daq/LecroyMount/"
+raw_path = "/home/daq/LecroyMount/"  # PATH TO THE SCOPE RAW DATA FOLDER
 
 def linear(x, a, b):
     return a*x + b
 
 def find_cross_x(array, start, direction):
     # array = np.abs(array)
-    print(array)
     minima = np.min(array)
     maxima = np.max(array)
     min_scale = np.abs(maxima - minima)/10.0
-    # max_scale = np.abs(maxima - minima)*9.5/10.0
-    delta = np.abs(maxima - minima)
+    max_scale = np.abs(maxima - minima)*9.0/10.0
     crossing_point = start
     # for i in range(len(array)):
     i = start
     while i < len(array):
-        if (array[i] > min(array)*(1 + delta * 0.1)) and (array[i] < max(array)*(1 - delta * 0.1)):
-            # print((array[i] - min(array)) > min_scale and (array[i] - min(array)) < max_scale):
-            if i != 0 and (array[i] - array[i - 1]) > min_scale and direction < 0:
-                crossing_point = i
-                break
-            elif i != 0 and (array[i - 1] - array[i]) > min_scale and direction > 0:
-                crossing_point = i
-                break
-            else:
-                i+=direction
+        # print(array)
+        if i != 0 and (array[i] - array[i - 1]) > min_scale and direction < 0 and (array[i] - min(array)) > min_scale and (array[i] - min(array)) < max_scale:
+            crossing_point = i
+            break
+        if i != 0 and (array[i - 1] - array[i]) > min_scale and direction < 0 and (array[i] - min(array)) > min_scale and (array[i] - min(array)) < max_scale:
+            crossing_point = i
+            break
         else:
             i+=direction
     return crossing_point
@@ -46,49 +41,40 @@ def add_clock(tree):
     nSamples = len(time)
     clocks = channel[:,6]
     triggers = channel[:,7]
-    times = time[0][0]
+    times = np.array(time[:,0])*10**9
+    clock = np.array(clocks)
+    minima = np.tile(np.min(clock, axis=1).reshape(-1,1), (1, len(clock[0])))
+    maxima = np.tile(np.max(clock, axis=1).reshape(-1,1), (1, len(clock[0])))
+    amp_fraction = 20 # %
+    amp = minima + np.abs(minima - maxima)*amp_fraction/100
 
-    # print(len(times))
-    # print(len(clocks[0]))
-    nGoodSamples = 5
-    clock_timestamp = []
+    min_scale = np.abs(maxima - minima)/10.0
 
-    for idx, clock in enumerate(clocks):
-        print(idx)
-        amp_fraction = 20 # %
-        risingX = []
-        risingY = []
-        minima = np.min(clock)
-        maxima = np.max(clock)
-        min_scale = np.abs(maxima - minima)/10.0
-        minimum = find_cross_x(clock, 0, +1)
-        maximum = find_cross_x(clock, minimum, -1)
-        #print(maximum, minimum)
-        for k, s in enumerate(clock):
-            if k ==0: continue
-            if (k > maximum) or (k < minimum): continue
-            risingX.append(times[k]*10**9)
-            risingY.append(s)
+    clock_diff = np.diff(clock, append=0)
+    clock_diff_mask = clock_diff > min_scale
+    # true after indices
+    check_prior_fall = clock_diff < -min_scale
+    prior_indices = np.argmax(check_prior_fall, axis=1)
 
-        risingX = np.array(risingX)
-        risingY = np.array(risingY)
-        print(risingX)
-        print(risingY)
-        popt, pcov = curve_fit(linear, risingX, risingY)
-        amp = minima + np.abs(minima - maxima)*amp_fraction/100
-        print(risingY)
-        print(risingX)
-        print(amp)
-        clock_timestamp.append([(amp - popt[1]) / popt[0]])
-        if (len(risingX) != 0) and (idx % 100 == 0) :
-            print(len(times*10**9), len(clock))
-            plt.plot(risingX, risingY, 'o')
-            plt.plot(np.array(times)*(10**9), np.array(clock))
-            plt.plot(risingX, linear(risingX, *popt))
-            plt.savefig("./fit_results_aram/clock_{0}.png".format(idx))
-            plt.close()        # print(popt)
-        # print((risingY*(20/100) - popt[1]) / popt[0])
-    # tree["Clock"] = np.array(clock_timestamp)
+    prior_fall_mask = np.arange(check_prior_fall.shape[1]) >= prior_indices[:, None]
+
+    global_mask = clock_diff_mask & prior_fall_mask
+
+    times = np.where(global_mask, times, 0)
+    clock = np.where(global_mask, clock, 0)
+    # delete 0 values for each row
+    times = ak.Array([sublist[sublist != 0] for sublist in times])
+    clock = ak.Array([sublist[sublist != 0] for sublist in clock])
+
+    print(times)
+    time_slope = times[:,1] - times[:,0]
+    clock_slope = clock[:,1] - clock[:,0]
+    slope = clock_slope / time_slope
+    ybias = clock[:,0] - slope*times[:,0]
+
+    # calculate 20% of the amplitude
+    amp = (minima + np.abs(minima - maxima)*amp_fraction/100)[:,0]
+    clock_timestamp = np.array((amp - ybias) / slope)
     return clock_timestamp
 
 def merge_trees(files, trees, output_file):
@@ -111,7 +97,6 @@ def merge_trees(files, trees, output_file):
     other_keys_2 = []
 
     for data in datas:
-        # print(data)
         for key in data.fields:
             if key not in merged_data.keys():
                 merged_data[key] = data[key]
@@ -127,9 +112,9 @@ def merge_trees(files, trees, output_file):
 if __name__ == "__main__":
     # Replace these file names and tree names with your actual file names and tree names 
     # /home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/Conversion/merging.txt
-    base = "/home/daq/ETROC2_Test_Stand/ScopeHandler"
+    base = "../../ScopeHandler"
     # os.system("./reset_merging.sh")
-    f_index = int(open(f"{base}/Lecroy/Acquisition/next_run_number.txt").read())-2
+    f_index = int(open(f"{base}/Lecroy/Acquisition/next_run_number.txt").read())-1
     print(f_index, "\n")
     prev_status = 0
     while True:
@@ -137,12 +122,12 @@ if __name__ == "__main__":
         scope_tree = f"{base}/ScopeData/LecroyTimingDAQ/run_scope{f_index}.root"
         etroc_tree = f"{base}/ScopeData/ETROCData/output_run_{f_index}.root"
         reco_1 = (open(f"{base}/Lecroy/Conversion/merging.txt",                    "r").read() == "True")
-        reco_2 = (path.isfile(reco_tree ))
+        reco_2 = (path.isfile(reco_tree))
         reco = reco_1 and reco_2
         scope_1 = (open(f"{base}/Lecroy/Acquisition/merging.txt",                  "r").read() == "True")
         scope_2 = (path.isfile(scope_tree))
         scope = scope_1 and scope_2
-        etroc_1 = (open(f"/home/daq/ETROC2_Test_Stand/module_test_sw/merging.txt", "r").read() == "True")
+        etroc_1 = (open(f"../../module_test_sw/merging.txt", "r").read() == "True")
         etroc_2 = (path.isfile(etroc_tree))
         etroc = etroc_1 and etroc_2
         merged_file = f"{base}/ScopeData/LecroyMerged/run_{f_index}.root"
@@ -184,7 +169,7 @@ if __name__ == "__main__":
             f.write("False")
             f.truncate()
             f.close()
-            f = open(f"/home/daq/ETROC2_Test_Stand/module_test_sw/merging.txt", "w")
+            f = open(f"../../module_test_sw/merging.txt", "w")
             f.write("False")
             f.truncate()
             f.close()

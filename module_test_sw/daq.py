@@ -14,11 +14,12 @@ from time import sleep
 from tamalero.utils import get_kcu
 
 #IPB_PATH = "ipbusudp-2.0://192.168.0.10:50001?max_payload_size=1500"
-IPB_PATH = "ipbusudp-2.0://192.168.0.10:50001"
+IP_ADDRESS = "192.168.0.10" # THE IP ADDRESS OF THE DAQ ASSISTANT
+IPB_PATH = f"ipbusudp-2.0://{IP_ADDRESS}:50001"
 ADR_TABLE = "./address_table/generic/etl_test_fw.xml"
 
 def get_kcu_flag():
-    return open(f"/home/daq/ETROC2_Test_Stand/ScopeHandler/Lecroy/Acquisition/running_acquitision.txt").read()
+    return open(f"../../ScopeHandler/Lecroy/Acquisition/running_acquitision.txt").read()
 
 def get_occupancy(hw, rb):
     try:

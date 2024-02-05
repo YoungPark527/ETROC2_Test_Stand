@@ -17,7 +17,7 @@ initial = time.time()
 RawDataPath = ""
 RawDataLocalCopyPath = ""
 
-OutputFilePath = "/home/daq/ETROC2_Test_Stand/ScopeHandler/ScopeData/LecroyConverted/"
+OutputFilePath = "../../ScopeHandler/ScopeData/LecroyConverted/"
 # OutputFilePath = "/home/daq/SensorBeam2023/LecroyScope/RecoData/ConversionRECO/"
 eosPath = "root://cmseos.fnal.gov//store/group/cmstestbeam/SensorBeam2023/LecroyScope/RecoData/ConversionRECO/"
 
@@ -29,10 +29,10 @@ if os.path.exists("_condor_stdout"):
 	LocalMode=False
 
 if LocalMode:
-	RawDataPath = "/home/daq/LecroyMount/"
+	RawDataPath = "/home/daq/LecroyMount/" # ADD THE LECROY SCOPE RAW DATA FOLDER
 	# RawDataLocalCopyPath = "/home/daq/SensorBeam2023/LecroyScope/RawData/"
 	# RawDataLocalCopyPath = "/home/daq/ETROC2_Test_Stand/ScopeHandler/ScopeData/LecroyTimingDAQ"
-	RawDataLocalCopyPath = "/home/daq/ETROC2_Test_Stand/ScopeHandler/ScopeData/LecroyRaw"
+	RawDataLocalCopyPath = "../../ScopeHandler/ScopeData/LecroyRaw"
 
 if not LocalMode:
         OutputFilePath = ""
