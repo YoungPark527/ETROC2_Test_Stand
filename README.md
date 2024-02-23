@@ -8,7 +8,7 @@ The test stand consists of the radiation source, the module and the readout boar
 cd ETROC2_Test_Stand
 source MountLecroyData.sh 
 ```
-2) Taking data from KCU.
+2) Taking data from KCU only (without the scope data).
 ```
 cd /home/daq/
 source Test_Stand.sh
@@ -20,7 +20,7 @@ ipython -i test_ETROC.py -- --test_chip --hard_reset --partial --configuration m
 
 To run the Acquisition and the ETROC data taking at the same time the Autopilot can be used:
 
-3) Running the autopilot.
+3) Running the autopilot (taking data from the KCU and the scope).
 ```
 cd /home/daq/
 source Autopilot.sh
@@ -30,7 +30,7 @@ ipython -i test_ETROC.py -- --test_chip --hard_reset --partial --configuration m
 ./autopilot.sh $number_of_events $threshold_offset
 ```
 
-4) Do the data acquisition from the scope.
+4) Do the data acquisition from the scope (without the data taking from the scope).
 ```
 cd ETROC2_Test_Stand
 source Acquisition.sh
