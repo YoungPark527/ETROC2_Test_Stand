@@ -23,7 +23,7 @@ To run the Acquisition and the ETROC data taking at the same time the Autopilot 
 3) Running the autopilot (taking data from the KCU and the scope).
 ```
 cd /home/daq/
-source Autopilot.sh
+source Setup_Autopilot_Variables.sh
 ipython test_tamalero.py -- --control_hub --kcu $DAQ_assistant_IP --verbose --configuration modulev0b --power_up
 ipython -i test_ETROC.py -- --test_chip --hard_reset --partial --configuration modulev0b --module 1 
 (and make sure that the lpGBT connections are locked)
